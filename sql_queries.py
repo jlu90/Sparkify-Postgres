@@ -8,7 +8,7 @@ time_table_drop = ""
 
 # CREATE TABLES
 
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id)
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id INT, s)
 """)
 
 user_table_create = ("""
