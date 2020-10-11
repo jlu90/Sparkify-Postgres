@@ -1,10 +1,9 @@
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
-
 def create_database():
     # connect to default database
-    conn = psycopg2.connect("host=127.0.0.1 dbname=studentdb user=student password=student")
+    conn = psycopg2.connect("dbname=udacity")
     conn.set_session(autocommit=True)
     cur = conn.cursor()
     
@@ -16,11 +15,10 @@ def create_database():
     conn.close()    
     
     # connect to sparkify database
-    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
+    conn = psycopg2.connect("dbname=sparkifydb")
     cur = conn.cursor()
     
     return cur, conn
-
 
 def drop_tables(cur, conn):
     for query in drop_table_queries:
@@ -41,7 +39,6 @@ def main():
     create_tables(cur, conn)
 
     conn.close()
-
 
 if __name__ == "__main__":
     main()
