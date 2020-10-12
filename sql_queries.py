@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS artists (artist_id VARCHAR PRIMARY KEY, name VARCHAR,
 """)
 
 time_table_create = ("""
-CREATE TABLE IF NOT EXISTS time (start_time TIME(0), hour INT, day INT, week INT, month VARCHAR, year INT, weekday VARCHAR)
+CREATE TABLE IF NOT EXISTS time (start_time TIME(6), hour INT, day INT, week INT, month INT, year INT, weekday VARCHAR)
 """)
 
 # INSERT RECORDS
