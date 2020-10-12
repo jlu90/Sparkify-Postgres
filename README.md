@@ -1,6 +1,7 @@
-# Sparkify: Creating a Relational Data Model using postgreSQL  
+# Sparkify: Creating a Relational Data Model using PostgreSQL  
 
 ### Author: Jocelyn Lutes
+### Project Notes: Created as part of Udacity's Data Engineering Nanodegree
 
 ### Background
 Sparkify is a new startup that is looking to revolutionize music streaming through the use of its Sparkify Music App. The analytics team at Sparkify is interested in understanding user behavior on the app (particularly which songs users are listening to). Currently, there is no easy way for the analytics team to retrieve the data that they need to answer their questions. 
