@@ -1,4 +1,4 @@
-# Sparkify: Creating a Relational Data Model using postgreSQL  
+# Sparkify: Creating a Relational Data Model using PostgreSQL  
 
 ### Author: Jocelyn Lutes
 ### Project Notes: Created as part of Udacity's Data Engineering Nanodegree
