@@ -6,6 +6,11 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    ''' 
+    - Converts opens JSON file from filepath and stores data in pandas data frame
+    - Inserts song data into song table
+    - Inserts artist data into artist table
+    '''
     # open song file
     data = pd.read_json(filepath, typ = 'series') # Must open as a series and then convert to df
     df = pd.DataFrame([data])
@@ -23,6 +28,14 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    '''
+    - Reads JSON file from filepath into a pandas data frame
+    - Filters data to only include 'Next Song' actions
+    - Extracts time information and inserts it into the time table
+    - Extracts user information and inserts it into user table
+    - Finds song_id and artist_id for songs in log data set
+    - Extracts songplay information and inserts it into songplay table
+    '''
     # open log file
     df = pd.read_json(filepath, lines = True)
 
@@ -81,13 +94,18 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    '''
+    - Aggregates all JSON files from a directory into a list
+    - Iterates over list of files and applies a processing function to those files
+    - Reports progress as it runs
+    '''
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
         files = glob.glob(os.path.join(root,'*.json'))
         for f in files :
             all_files.append(os.path.abspath(f))
-
+    
     # get total number of files found
     num_files = len(all_files)
     print('{} files found in {}'.format(num_files, filepath))
@@ -100,6 +118,11 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+    '''
+    - Connects to sparkifydb
+    - Applies song processing to song data set -> Inserts data into songs and artists tables
+    - Applies log processing to log data set -> Inserts data into time, users, and songplays tables
+    '''
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb")
     cur = conn.cursor()
 
