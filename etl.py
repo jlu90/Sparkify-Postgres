@@ -49,7 +49,7 @@ def process_log_file(cur, filepath):
     timestamp = list(t.dt.time.values)
     hour = list(t.dt.hour.values)
     day = list(t.dt.day.values)
-    week = list(t.dt.isocalendar().week.values)
+    week = list(t.dt.isocalendar().week.values) # CANNOT USE t.dt.week.values because it is deprecated in my version of Python
     month = list(t.dt.month.values)
     year = list(t.dt.year.values)
     weekday = list(t.dt.day_name().values)

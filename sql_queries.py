@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS artists (artist_id VARCHAR PRIMARY KEY, name VARCHAR,
 """)
 
 time_table_create = ("""
-CREATE TABLE IF NOT EXISTS time (start_time TIME(6), hour INT, day INT, week INT, month INT, year INT, weekday VARCHAR)
+CREATE TABLE IF NOT EXISTS time (start_time TIME(6) PRIMARY KEY, hour INT, day INT, week INT, month INT, year INT, weekday VARCHAR)
 """)
 
 # INSERT RECORDS
@@ -61,7 +61,9 @@ DO NOTHING;
 
 time_table_insert = ("""
 INSERT INTO time (start_time, hour, day, week, month, year, weekday)
-VALUES (%s, %s, %s, %s, %s, %s, %s);
+VALUES (%s, %s, %s, %s, %s, %s, %s)
+ON CONFLICT (start_time)
+DO NOTHING;
 """)
 
 # FIND SONGS

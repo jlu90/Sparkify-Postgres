@@ -51,7 +51,7 @@
 **DIMENSION: Time**  
 |Column| Data Type| Contraints|
 |-|-|-|
-|start_time| TIME(6)| |
+|start_time| TIME(6)| PRIMARY KEY|
 |hour| INT| |
 |day| INT | |
 |week| INT | |
