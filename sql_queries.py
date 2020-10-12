@@ -63,8 +63,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s);
 # FIND SONGS
 
 song_select = ("""
-SELECT s.title FROM songplays sp
-    JOIN songs s ON s.song_id = sp.song_id;
+
 """)
 
 # QUERY LISTS
