@@ -9,11 +9,11 @@ Sparkify is a new startup that is looking to revolutionize music streaming throu
 **Problem Statement**: For this project, the data engineering team has been tasked to build a relational database that is optimized for queries on song play analysis.
 
 ### Contents of Repository
-* [Data Folder](https://github.com/jlu90/Sparkify-Postgres/tree/main/data)
-* [sql_queries.py](https://github.com/jlu90/Sparkify-Postgres/blob/main/sql_queries.py) - Python script containing SQL queries to create tables, insert data into tables, drop tables, and perform other queries
-* [create_tables.py](https://github.com/jlu90/Sparkify-Postgres/blob/main/create_tables.py) - Python script that creates a postgres database containing empty tables
-* [etl.py](https://github.com/jlu90/Sparkify-Postgres/blob/main/etl.py) - Python script that extracts data from JSON files, transforms it to the appropriate data type or format, and loads it into a SQL table
-* [test.ipynb](https://github.com/jlu90/Sparkify-Postgres/blob/main/test.ipynb) - Jupyter Notebook containing sample queries
+* Data
+* sql_queries.py - Python script containing SQL queries to create tables, insert data into tables, drop tables, and perform other queries
+* create_tables.py - Python script that creates a postgres database containing empty tables
+* etl.py - Python script that extracts data from JSON files, transforms it to the appropriate data type or format, and loads it into a SQL table
+* test.ipynb - Jupyter Notebook containing sample queries
 
 ### Instructions for  Repository
 1. Run `create_tables.py` to create database and tables
