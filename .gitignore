@@ -5,3 +5,4 @@ data/.DS_Store
 data/song_data/.DS_Store
 data/song_data/A/.DS_Store
 data/song_data/A/A/.DS_Store
+__pycache__
