@@ -8,11 +8,6 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-songplay_table_create = ("""
-CREATE TABLE IF NOT EXISTS songplays 
-(songplay_id SERIAL PRIMARY KEY, start_time TIME(6) NOT NULL, user_id INT NOT NULL, level VARCHAR, song_id VARCHAR, artist_id VARCHAR, session_id INT NOT NULL, location VARCHAR, user_agent VARCHAR)
-""")
-
 user_table_create = ("""
 CREATE TABLE IF NOT EXISTS users (user_id INT PRIMARY KEY, first_name VARCHAR, last_name VARCHAR, gender VARCHAR, level VARCHAR)
 """)
@@ -27,6 +22,10 @@ CREATE TABLE IF NOT EXISTS artists (artist_id VARCHAR PRIMARY KEY, name VARCHAR,
 
 time_table_create = ("""
 CREATE TABLE IF NOT EXISTS time (start_time TIME(6) PRIMARY KEY, hour INT, day INT, week INT, month INT, year INT, weekday VARCHAR)
+""")
+
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays 
+(songplay_id SERIAL PRIMARY KEY, start_time TIME(6) NOT NULL REFERENCES time(start_time), user_id INT NOT NULL REFERENCES users(user_id), level VARCHAR, song_id VARCHAR REFERENCES songs(song_id), artist_id VARCHAR REFERENCES artists(artist_id), session_id INT NOT NULL, location VARCHAR, user_agent VARCHAR)
 """)
 
 # INSERT RECORDS
@@ -78,5 +77,5 @@ WHERE s.title = %s AND a.name = %s AND s.duration = %s
 
 # QUERY LISTS
 
-create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
-drop_table_queries = [songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
+create_table_queries = [user_table_create, song_table_create, artist_table_create, time_table_create, songplay_table_create]
+drop_table_queries = [ user_table_drop, song_table_drop, artist_table_drop, time_table_drop, songplay_table_drop]
