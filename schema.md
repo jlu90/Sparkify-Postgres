@@ -4,11 +4,11 @@
 |Column| Data Type| Contraints|
 |-|-|-|
 |songplay_id| SERIAL| PRIMARY KEY|
-|start_time| TIME(6)| |
-|user_id| INT| |
+|start_time| TIME(6)| FOREIGN KEY|
+|user_id| INT| FOREIGN KEY|
 |level| VARCHAR | |
-|song_id| VARCHAR| |
-|artist_id| VARCHAR | |
+|song_id| VARCHAR| FOREIGN KEY|
+|artist_id| VARCHAR | FOREIGN KEY|
 |session_id| INT | |
 |location| VARCHAR| |
 |user_agent| VARCHAR| |  
